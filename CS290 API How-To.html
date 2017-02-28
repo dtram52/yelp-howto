@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>CS290 API How-To</title>
+	<link href="./CS290 API How-To_files/style.css" rel="stylesheet" type="text/css">
+	<script src="./CS290 API How-To_files/script.js.download"></script>
+  </head>
+  
+  <body>
+	<div id="titleDiv">
+		<div id="tb1" class="titleButton"><a href="http://web.engr.oregonstate.edu/~baellyd/project_main.html">Intro</a></div>
+		<div id="tb2" class="titleButton"><a href="http://web.engr.oregonstate.edu/~baellyd/project_key.html">Getting Access</a></div>
+		<div id="tb3" class="titleButton"><a href="http://web.engr.oregonstate.edu/~baellyd/project_req.html">Requests and Response</a></div>
+		<div id="tb4" class="titleButton"><a href="http://web.engr.oregonstate.edu/~baellyd/project_resp.html">Making Sense of Data</a></div>
+		<div id="tb5" class="titleButton"><a href="http://web.engr.oregonstate.edu/~baellyd/project_ex.html">API At Work</a></div>
+	</div>
+	<div>
+		<img id="yelpImg" src="./CS290 API How-To_files/logo-2-color.png">
+		<h1>Introduction to the Yelp Fusion API.  How to 'Yelp' From Your Own Page!</h1>
+	</div>
+	<div id="demoBox"></div>
+	<div id="introBox"><br><h2>...So what is an API? </h2><br>
+		<p>At its most basic, an API (or Application Programming Interface) is a set of tools
+			and data, often provided by a third party, which enables the programmer 
+			to add useful functionality when developing a program.  APIs work for programmers in a
+			similar conceptual way as GUIs (or Graphical User Interfaces) work for users, by 
+			providing a level of abstraction that limits the need for in-depth knowledge of its 
+			'inner-workings' or underlying code. (1) 
+		</p>
+		
+		<p>APIs can be used to access data from a provider's data base (such as Wikipedia or NASA), 
+		incorporate map and navigation functionality into a program (such as Google Maps) or publish
+		content to social media (Facebook).  The benefits of using an API may include less coding 
+		required for the same functionality on the developer's part, with more code testing provided 
+		by the third part than the developer may otherwise be able to perform, thereby providing a 
+		significant increase in productivity.  (2) 
+		</p>
+	</div>
+	<div id="apiBox">
+		<h2>The Yelp Fusion API</h2>
+		<p>The Yelp Fusion API allows developers to add functionality for finding and reviewing businesses.  
+		The API is broken into two individual APIs- one for searching available businesses in Yelp (using GPS
+		functionality), and another for examining details for a given business (ex: hours of operation, reviews, and 
+		photos).</p>
+
+		<p>The API functions by using standard, secure authorization protocols 
+			<a class="links" href="https://en.wikipedia.org/wiki/OAuth">OAuth</a> and  
+			<a class="links" href="https://www.x.org/archive/X11R6.8.1/doc/xauth.1.html">xAuth</a>
+		to authenticate requests.  OAuth is used for Yelp login; xAuth provides a way 
+		for username/password exchange [to obtain an OAuth access token].  There are currently 2 versions of the 
+		Yelp Fusion API being used- versions 2 and 3.  <a href="https://github.com/Yelp/yelp-fusion">Version 3 has been 
+		recently introduced</a> to supplement existing v2 functionality.  Changes between the two versions include an upgraded version of OAuth; Yelp v2 uses OAuth 
+		v1a, and Yelp v3 uses OAuth v2.  Yelp v3 also includes autocomplete functionality and a search endpoint for 
+		food delivery from businesses.</p>
+		<p>In this review, we will focus on Yelp v2 as it has been around much longer, has been more extensively 
+		utilized (and therefore tested), and has a greater amount of associated documentation than Yelp v3.
+		</p>
+
+		<p>To access the API, it's necessary to go through the following series of steps, as described in detail
+		at the links above: 
+			</p><ol>
+				<li>Install the necessary Node.js packages using npm 
+				</li><li>Get authentication credentials: Request an API Key, Secret, and Token from Yelp by creating an "App". 
+				There are 2 versions of the API, v2 and v3, which vary slightly in how credentials are obtained.
+				</li><li>Make an API Request: Use Key, Secret, Token and Token Secret to authenticate API calls when requesting 
+				information from Yelp
+				</li><li>API Response: Parse and process the returned data
+			</li></ol>
+	</div>
+	
+	<div id="introBox2"><h2>What is Node.js and npm?</h2>
+		<p>Node.js is a JavaScript-based platform used to develop web applications outside of the 
+			browser (1).  It allows for <strong>Asynchronous Input/Output (I/O)</strong>, whereby program/
+			script processing can run concurrently with input and output operations.  Traditionally, 
+			I/O has been <strong>Synchronous</strong>:  I/O would halt executing script or program processes, 
+			pending its completion.  Because I/O can be a very slow process (possibly seeking
+			or writing data to a mechanical system), Synchronous I/O can significantly impact program performance.
+			(2)</p>
+
+			<p>npm, or <strong>NodeJS Package Manager</strong> is included when installing Node.js.  It is used 
+			on the command line and works with a remote registry to install a variety (over 280,000!) of "packages" 
+			or shared Javascript code modules provided by a third party(3).  
+	</p></div>
+
+	
+	<footer>
+		<p>References: <br>
+			1.<a class="foot" href="https://en.wikipedia.org/wiki/Application_programming_interface#cite_note-Clarke4-1">
+			https://en.wikipedia.org/wiki/Application_programming_interface#cite_note-Clarke4-1</a><br>
+			2.<a class="foot" href="http://www.programmableweb.com/news/how-web-and-browser-apis-fuel-api-economy/analysis/2015/12/03">
+			http://www.programmableweb.com/news/how-web-and-browser-apis-fuel-api-economy/analysis/2015/12/03</a><br>
+			</p>
+</footer>
+
+	
+</body></html>
